@@ -1,3 +1,5 @@
+node_modules/
+mongo-database/
 node_modules/gulp-plumber/node_modules/gulp-util/node_modules/dateformat/node_modules/meow/node_modules/read-pkg-up/node_modules/read-pkg/node_modules/load-json-file/node_modules/parse-json/node_modules/error-ex/README.md
 node_modules/gulp-plumber/node_modules/gulp-util/node_modules/dateformat/node_modules/meow/node_modules/read-pkg-up/node_modules/read-pkg/node_modules/load-json-file/node_modules/parse-json/node_modules/error-ex/package.json
 node_modules/gulp-plumber/node_modules/gulp-util/node_modules/dateformat/node_modules/meow/node_modules/read-pkg-up/node_modules/read-pkg/node_modules/load-json-file/node_modules/pinkie-promise/node_modules/pinkie/index.js
