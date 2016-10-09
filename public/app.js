@@ -3,8 +3,14 @@ angular.module('MyApp', ['ngCookies', 'ngResource', 'ngMessages', 'ngRoute', 'mg
     $locationProvider.html5Mode(true);
         
     $routeProvider
-      .when('/', { templateUrl: 'views/home.html', controller: 'MainCtrl' })
-      .when('/shows/:id', {templateUrl: 'views/detail.html', controller: 'DetailCtrl'})
+      .when('/',{ 
+        templateUrl: 'views/home.html',
+        controller: 'MainCtrl' 
+    })
+      .when('/shows/:id', {
+        templateUrl: 'views/detail.html', 
+        controller: 'DetailCtrl'
+    })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
