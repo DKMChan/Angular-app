@@ -6,10 +6,10 @@ angular.module('MyApp')
 
       return {
         login: function(user) {
-          return $http.post('/api/login', user)
+          return $http.post('/show-app/api/login', user)
             .success(function(data) {
               $rootScope.currentUser = data;
-              $location.path('/');
+              $location.path('/show-app');
 
               $alert({
                 title: 'Cheers!',
@@ -30,9 +30,9 @@ angular.module('MyApp')
             });
         },
         signup: function(user) {
-          return $http.post('/api/signup', user)
+          return $http.post('/show-app/api/signup', user)
             .success(function() {
-              $location.path('/login');
+              $location.path('/show-app/login');
 
               $alert({
                 title: 'Congratulations!',
@@ -53,7 +53,7 @@ angular.module('MyApp')
             });
         },
         logout: function() {
-          return $http.get('/api/logout').success(function() {
+          return $http.get('/show-app/api/logout').success(function() {
             $rootScope.currentUser = null;
             $cookieStore.remove('user');
             $alert({

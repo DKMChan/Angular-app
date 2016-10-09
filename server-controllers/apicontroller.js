@@ -7,7 +7,7 @@ var xml2js = require('xml2js');
 var _ = require('lodash');
 
 module.exports = function(app){
-    app.get('/api/shows', function(req, res, next) {
+    app.get('/show-app/api/shows', function(req, res, next) {
       var query = Show.find();
       if (req.query.genre) {
         query.where({ genre: req.query.genre });
@@ -22,7 +22,7 @@ module.exports = function(app){
       });
     });
     
-    app.get('/api/shows/:id', function(req, res, next) {
+    app.get('/show-app/api/shows/:id', function(req, res, next) {
       Show.findById(req.params.id, function(err, show) {
         if (err) return next(err);
         res.send(show);
@@ -30,7 +30,7 @@ module.exports = function(app){
     });
     
     
-    app.post('/api/shows', function(req, res, next) {
+    app.post('/show-app/api/shows', function(req, res, next) {
   var apiKey = '50C06D5B805888DF';
   var parser = xml2js.Parser({
     explicitArray: false,
@@ -113,8 +113,8 @@ module.exports = function(app){
     
     
     
-    app.get('*', function(req, res) {
-      res.redirect('/#' + req.originalUrl);
+    app.get('/show-app/*', function(req, res) {
+      res.redirect('/show-app/#' + req.originalUrl);
     });
     
     app.use(function(err, req, res, next) {

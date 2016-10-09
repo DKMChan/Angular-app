@@ -3,27 +3,27 @@ angular.module('MyApp', ['ngCookies', 'ngResource', 'ngMessages', 'ngRoute', 'mg
     $locationProvider.html5Mode(true);
         
     $routeProvider
-      .when('/',{ 
+      .when('/show-app',{ 
         templateUrl: 'views/home.html',
         controller: 'MainCtrl' 
     })
-      .when('/shows/:id', {
+      .when('/show-app/shows/:id', {
         templateUrl: 'views/detail.html', 
         controller: 'DetailCtrl'
     })
-      .when('/login', {
+      .when('/show-app/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/signup', {
+      .when('/show-app/signup', {
         templateUrl: 'views/signup.html',
         controller: 'SignupCtrl'
       })
-      .when('/add', {
+      .when('/show-app/add', {
         templateUrl: 'views/add.html',
         controller: 'AddCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/show-app'
       });
   }]);
