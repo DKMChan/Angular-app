@@ -8,8 +8,8 @@ var bcrypt = require('bcryptjs');
 
 
 
-var dbController = require('./public/controllers/db-controller.js');
-var apiController = require('./public/controllers/apicontroller.js');
+var dbController = require('./server-controllers/db-controller.js');
+var apiController = require('./server-controllers/apicontroller.js');
 
 var app = express();
 
