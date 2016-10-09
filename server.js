@@ -14,7 +14,7 @@ var passportController = require('./server-controllers/passport-controller.js');
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -26,7 +26,7 @@ dbController(app);
 apiController(app);
 passportController(app);
 
-app.listen(app.get('port'), function() {
+app.listen(process.env.PORT || 3000, function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
