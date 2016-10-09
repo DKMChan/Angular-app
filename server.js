@@ -15,16 +15,18 @@ var passportController = require('./server-controllers/passport-controller.js');
 var app = express();
 
 
-app.use(logger('dev'));
+/*app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(cookieParser());
+app.use(cookieParser());*/
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 /* -- Show App Controllers -- */
+passportController(app);
 dbController(app);
 apiController(app);
-passportController(app);
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function(){

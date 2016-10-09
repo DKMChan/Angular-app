@@ -9,7 +9,7 @@ angular.module('MyApp')
           return $http.post('/api/login', user)
             .success(function(data) {
               $rootScope.currentUser = data;
-              $location.path('/show-app');
+              $location.path('/');
 
               $alert({
                 title: 'Cheers!',
@@ -32,7 +32,7 @@ angular.module('MyApp')
         signup: function(user) {
           return $http.post('/api/signup', user)
             .success(function() {
-              $location.path('/ login');
+              $location.path('/login');
 
               $alert({
                 title: 'Congratulations!',

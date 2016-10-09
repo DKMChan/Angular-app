@@ -1,5 +1,4 @@
 var Show = require('../public/models/Show.js');
-var User = require('../public/models/User.js');
 var bodyParser = require('body-parser');
 var async = require('async');
 var request = require('request');

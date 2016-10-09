@@ -1,9 +1,23 @@
+var logger = require('morgan');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var User = require('../public/models/User.js');
+var bcrypt = require('bcryptjs');
 
 module.exports = function(app){
-        passport.serializeUser(function(user, done) {
+   
+    app.use(logger('dev'));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded());
+    app.use(cookieParser());
+    app.use(session({ secret: 'keyboard cat' }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+    passport.serializeUser(function(user, done) {
         done(null, user.id);
         });
 
@@ -24,15 +38,6 @@ module.exports = function(app){
             });
         });
         }));
-
-    app.use(session({ secret: 'keyboard cat' }));
-    app.use(passport.initialize());
-    app.use(passport.session());
-
-    function ensureAuthenticated(req, res, next) {
-        if (req.isAuthenticated()) next();
-        else res.send(401);
-        }
 
 
     app.post('/api/login', passport.authenticate('local'), function(req, res) {
@@ -62,5 +67,10 @@ module.exports = function(app){
       }
       next();
     });
+
+    function ensureAuthenticated(req, res, next) {
+        if (req.isAuthenticated())  {next(); }
+        else res.send(401);
+        }
 
 }
