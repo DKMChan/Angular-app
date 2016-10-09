@@ -26,7 +26,8 @@ dbController(app);
 apiController(app);
 passportController(app);
 
-app.listen(process.env.PORT || 3000, function(){
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
