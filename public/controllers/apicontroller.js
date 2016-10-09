@@ -1,6 +1,10 @@
-var showSetup = require('../models/Show.js');
-var userSetup = require('../models/User.js');
+var Show = require('../models/Show.js');
+var User = require('../models/User.js');
 var bodyParser = require('body-parser');
+var async = require('async');
+var request = require('request');
+var xml2js = require('xml2js');
+var _ = require('lodash');
 
 module.exports = function(app){
     app.get('/api/shows', function(req, res, next) {

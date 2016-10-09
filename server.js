@@ -6,10 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-var async = require('async');
-var request = require('request');
-var xml2js = require('xml2js');
-var _ = require('lodash');
+
 
 var dbController = require('./public/controllers/db-controller.js');
 var apiController = require('./public/controllers/apicontroller.js');
