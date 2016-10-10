@@ -4,7 +4,8 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var User = require('../public/models/User.js');
+var User = require('./user-controller.js');
+var Show = require('./show-controller.js');
 var bcrypt = require('bcryptjs');
 
 module.exports = function(app){
@@ -72,5 +73,27 @@ module.exports = function(app){
         if (req.isAuthenticated())  {next(); }
         else res.send(401);
         }
+    app.post('/api/subscribe', ensureAuthenticated, function(req, res, next) {
+        Show.findById(req.body.showId, function(err, show) {
+            if (err) return next(err);
+            show.subscribers.push(req.user.id);
+            show.save(function(err) {
+            if (err) return next(err);
+            res.send(200);
+            });
+        });
+        });
+
+        app.post('/api/unsubscribe', ensureAuthenticated, function(req, res, next) {
+            Show.findById(req.body.showId, function(err, show) {
+                if (err) return next(err);
+                var index = show.subscribers.indexOf(req.user.id);
+                show.subscribers.splice(index, 1);
+                show.save(function(err) {
+                if (err) return next(err);
+                res.send(200);
+                });
+            });
+            });
 
 }

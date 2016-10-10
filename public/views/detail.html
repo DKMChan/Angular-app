@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="text-center" ng-show="!currentUser">
-            <a class="btn btn-block btn-primary" href="#/login">Login to Subscribe</a>
+            <a class="btn btn-block btn-primary" href="/login">Login to Subscribe</a>
           </div>
         </div>
         <div class="media-body">
@@ -48,9 +48,20 @@
       <span class="glyphicon glyphicon-play"></span> Episodes
     </div>
     <div class="panel-body">
+
+
+   
+      <div ng-show="numberOfSeasons()">
+      <p>Number of Seasons: {{numberOfSeasons()}}</p>
+      <div ng-repeat="n in listOfSeasons">
+          {{n}}
+         </div>
+      </div>
+
       <div class="episode" ng-repeat="episode in show.episodes">
         <h4>{{episode.episodeName}}
         <small>Season {{episode.season}}, Episode {{episode.episodeNumber}}</small>
+       
         </h4>
         <p>
           <span class="glyphicon glyphicon-calendar"></span>
@@ -58,6 +69,9 @@
         </p>
         <p>{{episode.overview}}</p>
       </div>
+
     </div>
   </div>
 </div>
+
+

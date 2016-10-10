@@ -1,4 +1,4 @@
-var Show = require('../public/models/Show.js');
+var Show = require('./show-controller.js');
 var bodyParser = require('body-parser');
 var async = require('async');
 var request = require('request');
