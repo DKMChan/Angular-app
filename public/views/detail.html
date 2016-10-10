@@ -48,14 +48,8 @@
       <span class="glyphicon glyphicon-play"></span> Episodes
     </div>
     <div class="panel-body">
-
-
-   
       <div ng-show="numberOfSeasons()">
       <p>Number of Seasons: {{numberOfSeasons()}}</p>
-  
-      
-
        <uib-tabset active="active">
        <uib-tab index="$index + 1" ng-repeat="seasonNum in listOfSeasons" heading="Season {{seasonNum}}" disable="episode.disabled">
          <div class="episode" ng-repeat="episode in show.episodes | filter: {season: seasonNum }">

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat|News+Cycle);
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -1056,7 +1056,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "News Cycle", sans-serif;
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -1139,7 +1139,7 @@ hr {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: Avenir, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   line-height: 1.1;
   color: #111; }
@@ -5185,7 +5185,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans", sans-serif;
+  font-family: "News Cycle", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5298,7 +5298,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "News Cycle", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5816,7 +5816,8 @@ button.close {
     display: none !important; } }
 
 body {
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  font-size: 1.75em; }
 
 em {
   font-style: normal;
@@ -5824,8 +5825,9 @@ em {
 
 .alphabet {
   cursor: pointer;
-  font-size: 22px;
-  text-align: center; }
+  font-size: 1.75em;
+  text-align: center;
+  padding-bottom: 20px; }
   .alphabet li {
     display: inline-block;
     padding-left: 5px;
@@ -5877,7 +5879,7 @@ em {
 .search {
   color: #4f4f4f;
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 1.75em;
   padding: 7px;
   margin-top: -10px;
   border: 0;
@@ -5905,20 +5907,20 @@ em {
 .label, .genres li {
   display: inline-block;
   margin-bottom: 5px;
-  padding: 4px 8px;
+  padding: 10px 20px;
   border: 0;
   border-radius: 3px;
-  font-size: 12px;
+  font-size: 1.5em;
   transition: 0.1s all;
   -webkit-font-smoothing: antialiased; }
 
 .label-default, .genres li {
-  background-color: #e4e7ec;
+  background-color: #fff;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
-  color: #90939a; }
+  color: #1abc9c; }
   .label-default:hover, .genres li:hover {
-    background-color: #90939a;
-    color: #f4f6f8;
+    background-color: #1abc9c;
+    color: #fff;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2); }
 
 .navbar {
