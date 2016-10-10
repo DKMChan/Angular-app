@@ -53,25 +53,40 @@
    
       <div ng-show="numberOfSeasons()">
       <p>Number of Seasons: {{numberOfSeasons()}}</p>
-      <div ng-repeat="n in listOfSeasons">
-          {{n}}
-         </div>
+  
+      <ul class="nav nav-tabs">
+       <!-- <li class="active"><a data-toggle="tab" href="">Season {{listOfSeasons[0]}}</a></li>
+        <li ng-repeat="n in listOfSeasons"><a data-toggle="tab" href="#menu{{n}}">Season {{n}}</a></li>-->
+        <li ng-repeat="seasonNum in listOfSeasons" ng-class="{active: $index == 0}">
+              <a href="#tab{{$index + 1}}" data-toggle="tab">Season {{seasonNum}}</a>
+            </li>
+      </ul>
+      <div class="tab-content">
+          <div class="tab-pane fade in" id="tab{{$index + 1}}" ng-repeat="seasonNum in listOfSeasons" ng-class="{active: $index == 0}">
+            <p>{{$index + 1}}</p>
+             <div class="episode" ng-repeat="episode in show.episodes | filter: {season: seasonNum }">
+              <h4>{{episode.episodeName}}
+              <small>Season {{episode.season}}, Episode {{episode.episodeNumber}}</small>
+              </h4>
+              <p>
+                <span class="glyphicon glyphicon-calendar"></span>
+                {{episode.firstAired | date: 'short'}}
+              </p>
+              <p>{{episode.overview}}</p>
+            </div>
+
+          </div>
       </div>
 
-      <div class="episode" ng-repeat="episode in show.episodes">
-        <h4>{{episode.episodeName}}
-        <small>Season {{episode.season}}, Episode {{episode.episodeNumber}}</small>
-       
-        </h4>
-        <p>
-          <span class="glyphicon glyphicon-calendar"></span>
-          {{episode.firstAired | date: 'short'}}
-        </p>
-        <p>{{episode.overview}}</p>
       </div>
+      </div>
+
+    
 
     </div>
   </div>
 </div>
+
+
 
 
