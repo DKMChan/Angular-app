@@ -3,6 +3,6 @@ var showSetup = require('./show-controller.js');
 var userSetup = require('./user-controller.js');
 
 module.exports = function(app){
-    mongoose.connect('localhost');
+    mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds139715.mlab.com:39715/showtracker-app');
 
 }
